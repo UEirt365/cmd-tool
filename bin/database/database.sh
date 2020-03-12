@@ -40,7 +40,7 @@ export_data() {
     check_input_param "$schemas" "Invalid database schemas!"
 
     printf "Output file path: "
-    read path
+    read -e path
     check_input_param "$path" "Invalid database path!"
 
     printf "Do you want to export with data (Y/N): "
@@ -73,7 +73,7 @@ import_data() {
     check_input_param "$port" "Invalid database port!"
 
     printf "SQL file path: "
-    read path
+    read -e path
     check_input_param "$path" "Invalid sql file path!"
 
     sudo mysql --user=$user --password=$password --host=$LOCAL_HOST --port=$port < $path
